@@ -1,0 +1,68 @@
+{% extends "baseblock.html" %}
+    <!--forma de link-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+    <!-- forma local, es decir almacenar el codigo en la compu-->
+    <!--<link rel="stylesheet" href="static/materialize/css/materialize.min.css">-->
+    <!-- otra forma de hacerlo -->
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='materialize.min.css')}}"> -->
+    {% block title %}Registro de usuario{% endblock %}
+
+{% block background_image %} 
+    style="background-image: url(https://i.pinimg.com/736x/f0/30/83/f030838cf75dceafa94611c028efa932.jpg) ;" 
+{% endblock %}
+
+{% block navbar_links %}    
+    <li><a href="{{ url_for('auth.login') }}"><i class="material-icons left">home</i>Home</a></li>
+{% endblock %}   
+
+{% block title_page %} Registro {% endblock %}
+
+{% block content %}   
+    <div class="container indigo lighten-1">
+        <div class="card">
+            <div class="card-content blue lighten-2"> 
+                    <!-- label: se generalmente con form-->
+                <form method="post" enctype="multipart/form-data">
+                    <label for="cui" style="font-size: 18px; color: black;">CUI</label>
+                    <input type='text' name='cui' required autofocus placeholder="XXXXXXXXXX">
+                    <br>
+                    <label for="name" style="font-size: 18px; color: black;">Nombre</label>
+                    <input type='text' name='name' required placeholder="Primer nombre">
+                    <br>
+                    <label for="correo" style="font-size: 18px; color: black;">Correo Electronico</label>
+                    <input type='email' name='email' required placeholder="user@gmail.com">
+                    <!--<button type="submit">ingresar</button>-->
+                    <br>
+                    <label for="password" style="font-size: 18px; color: black;">contraseña</label>
+                    <input type='password' name='password' required minlength="8" maxlength="16" placeholder="********">
+                    <br>
+                    <label for="dateborn" style="font-size: 18px; color: black;">Fecha nacimiento</label>
+                    <input type="text" name="dateborn" class="datepicker" placeholder="Mes/Dia/Año">
+                    <br>
+                    <div class="file-field input-field">
+                        <div class="btn">
+                          <span>Foto de perfil</span>
+                          <input name="profilePicture" type="file" ><i class="material-icons left">add_a_photo</i>
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text" placeholder="perfil_ejemplo.png/jpg/jpeg">
+                        </div>
+                      </div>
+                    <br>
+                    <i class="large material-icons">accessibility</i>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">ingresar
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.datepicker');
+            var instances = M.Datepicker.init(elems, {});
+        });
+    </script>
+
+{% endblock %}

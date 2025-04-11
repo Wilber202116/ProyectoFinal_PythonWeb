@@ -1,0 +1,48 @@
+{% extends "baseblock.html" %}
+
+{% block title %}Catalogo{% endblock %}
+
+{% block navbar_links %}
+    <li><a href="{{ url_for('auth.home') }}" ><i class="medium material-icons left">exit_to_app</i>
+        Perfil</a>
+    </li>
+    <li>
+        <a href="{{ url_for('cart.viewCart')}}">
+            <i class="material-icons">shopping_cart</i>
+            {% if cartCount > 0 %}
+                <span class="cart-badge"> {{ cartCount }} </span>
+            {% endif %}
+        </a>
+    </li>
+{% endblock %}
+
+{% block title_page %} Catalogo de productos {% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        
+        <div class="row">
+            {% for product in products %}
+            <div class="col s12 m6 14">
+                <div class="card horizontal small">
+                    <div class="card-image">
+                        <img class="product-image" 
+                        src="{{ url_for('static', filename='uploads/'+ product.picture) }}" 
+                        alt="{{ product.name }}">
+                    </div>
+                    <div class="card-content product-content">
+                        <span class="card-title"> {{ product.name }} </span>
+                        <p><strong>Precio:</strong> $ {{ product.price }} </p>
+                    </div>
+                    <div class="card-action center-align">
+                        <form method="post" action="{{ url_for('cart.addToCart', productId=product.id) }}">
+                            <button class="btn red" type="submit">Agregar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

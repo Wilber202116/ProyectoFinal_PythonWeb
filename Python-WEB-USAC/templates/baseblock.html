@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--forma de link-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+    <!-- forma local, es decir almacenar el codigo en la compu-->
+    <!--<link rel="stylesheet" href="static/materialize/css/materialize.min.css">-->
+    
+    <!-- otra forma de hacerlo -->
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='materialize.min.css')}}"> -->
+    <link rel="stylesheet" href="{{url_for('static', filename='materialize/css/materialize.min.css')}}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}MiBarradeopciones{% endblock %} </title>
+</head>
+<body class="blue lighten-1" {% block background_image %}{% endblock %}>
+    <!--Barra de navegacion-->
+    <nav>
+        <div class="nav-wrapper teal">
+          <a href="#" class="brand-logo">MiBarradeopciones</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              {% block navbar_links %}{% endblock %}
+            </ul>
+        </div>
+      </nav>
+      <!--contenido de la pagina-->
+      <div class="container center">
+        <h1><span class="grey lighten-2">{% block title_page %}{% endblock %}</span></h1>
+        {% include "flash_message.html" %}
+        {% block content %}{% endblock %}
+      </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends "baseblock.html" %}
+{% block title %}Perfil usuario{% endblock %}
+
+{% block navbar_links %}
+  <li><a href="{{ url_for('auth.logout') }}" ><i class="medium material-icons left">exit_to_app</i>
+  Cerrar sesion</a></li>
+  <li><a href="{{ url_for('catalog.products') }}"> Catalogo</a></li>
+  <li><a href="{{ url_for('cart.viewCart') }}">
+    <i class="material-icons">shopping_cart</i>
+            {% if cartCount > 0 %}
+                <span class="cart-badge"> {{ cartCount }} </span>
+            {% endif %}
+  </a></li>
+{% endblock %}
+
+{% block title_page %} Perfil {% endblock %}
+
+{% block content %}
+  <div class="grey lighten-2">
+    {% if session["cui"] %}
+    <div class="row">
+      <div class="col s20 m15 pull-s1 offset-m2">
+        <h2 class="header" ><i class="small material-icons">account_circle</i>{{ user.name }}</h2>
+        <div class="card large grey lighten-3">
+          <div class="card-image">
+            <img class="profile-img"
+            style="width: 70%;" 
+            src="../{{user.profilePicture}}" 
+            alt="jajajaXDFuncionojaja">
+            <!--<img src="{{url_for('static', filename = 'uploads/'+ user.profilePicture)}}" alt="vamos a ver si funciona con esto">-->
+          </div>
+          <div class="card-stacked">
+            <div class="card-content" style="font-size: 17px;">
+              <p><strong>CUI:</strong> {{user.cui}} </p>
+              <p><strong>email:</strong> {{user.email}} </p>
+              <p><strong>Fecha de nacimiento: </strong> {{user.dateborn}} </p>
+            </div>
+            <div class="card-action center">
+              <a href="#" class="btn waves-effect waves-light teal darken-3">Editar Perfil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+{% endblock %}

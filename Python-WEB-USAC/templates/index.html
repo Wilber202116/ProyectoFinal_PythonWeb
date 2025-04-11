@@ -1,0 +1,38 @@
+{% extends "baseblock.html" %}
+
+{% block title %}Iniciar sesion{% endblock %}
+
+{% block background_image %} 
+    style="background-image: url(https://i.pinimg.com/736x/f0/30/83/f030838cf75dceafa94611c028efa932.jpg) ;" 
+{% endblock %} 
+        
+{% block navbar_links %}
+    <li><a href="{{ url_for('auth.register') }}"><i class="material-icons left">assignment_ind</i>Registrarse</a></li>
+{% endblock %}
+        
+{% block title_page %} Iniciar sesion {% endblock %}        
+{% block content %}
+
+    <!-- action: donde van a ir los datos -->
+    <!-- get: obtener info-->
+    <!-- post: -->
+    <div class="container teal darken-4">
+        <div class="card">
+            <div class="card-content"> 
+                    <!-- label: se generalmente con form-->
+                <form action="/" method="post" >
+                    <label for="cui" style="font-size: 18px; color: black;">CUI</label>
+                    <input type='text' name='cui' required autofocus placeholder="XXXXXXXXXX">
+                    <!--<button type="submit">ingresar</button>-->
+                    <br>
+                    <label for="password" style="font-size: 18px; color: black;">contraseña</label>
+                    <input type='password' name='password' required minlength="8" maxlength="16" placeholder="********">
+                    <i class="large material-icons">accessibility</i>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">ingresar
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

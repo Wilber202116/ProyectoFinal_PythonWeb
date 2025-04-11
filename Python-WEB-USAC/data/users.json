@@ -1,0 +1,42 @@
+[
+    {
+        "cui": "123457892514",
+        "name": "FSAFAS",
+        "email": "FSDFA@GMAIL.COM",
+        "password": "?tU^Q$D-3-y;vsp",
+        "dateborn": "Mar 03, 2025",
+        "profilePicture": "static/uploads/711688.jpg"
+    },
+    {
+        "cui": "52147896315",
+        "name": "wilber",
+        "email": "wilber@gmail.com",
+        "password": "789456321",
+        "dateborn": "Feb 16, 2025",
+        "profilePicture": "static/uploads/Youjo_Senki_Saga_of_Tanya_the_Evil1.png"
+    },
+    {
+        "cui": "369852741",
+        "name": "karclos",
+        "email": "kar@gmail.com",
+        "password": "9638527541",
+        "dateborn": "Mar 06, 2025",
+        "profilePicture": "static/uploads/fHPzy0ln.jpg"
+    },
+    {
+        "cui": "3698527415165156",
+        "name": "Wilber",
+        "email": "wilber@gt.com",
+        "password": "1234569871",
+        "dateborn": "Apr 02, 2025",
+        "profilePicture": "static/uploads/HatsuneMiku.jpg"
+    },
+    {
+        "cui": "216165158481231",
+        "name": "carlos",
+        "email": "car@gmail.com",
+        "password": "147852369852364",
+        "dateborn": "Apr 01, 2025",
+        "profilePicture": "static/uploads/Breath_of_the_Wild_The_Champion_Returns.jpg"
+    }
+]

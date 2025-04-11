@@ -1,0 +1,9 @@
+{% with mensajes = get_flashed_messages(with_categories=True) %}
+    {%if mensajes %}
+        {%for category, message in mensajes %}
+            <div class="card-panel {{ 'green lighten-3' if category == 'success' else 'red lighten-3'}}">
+                <span class="{{ 'green-text' if category == 'success' else 'red-text'}}">{{ message }}</span>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
